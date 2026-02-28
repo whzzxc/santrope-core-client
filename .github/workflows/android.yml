@@ -9,9 +9,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up NDK
-        uses: n0rtzh/ndk-build-action@v1
+        uses: nwidger/setup-ndk@v1
         with:
-          ndk-version: r25b # Или r25b для более новых систем
+          ndk-version: r21e
 
       - name: Build with ndk-build
         run: |

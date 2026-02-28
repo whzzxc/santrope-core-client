@@ -9,7 +9,7 @@
 
 bool CCheckFileHash::IsFileValid(SMDFile* pMDFile)
 {
-	PROTECT_CODE_CHECK_HASH1;
+	//PROTECT_CODE_CHECK_HASH1;
 
 	FILE* fLocalFile;
 	fLocalFile = fopen(pMDFile->szFileLocation, "r");

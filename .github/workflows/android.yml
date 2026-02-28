@@ -15,15 +15,12 @@ jobs:
 
       - name: Build with ndk-build
         run: |
-          # Пытаемся зайти в папку с кодом. Если структура другая, скрипт выведет список файлов для отладки.
-          cd santrope-core-client/jni || cd jni || ls -R
-          ${ANDROID_NDK_HOME}/ndk-build APP_ABI=arm64-v8a
+          # Сборка запускается прямо из корня, так как Android.mk здесь
+          ${ANDROID_NDK_HOME}/ndk-build APP_ABI=arm64-v8a NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk APP_PLATFORM=android-24
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: santrope-libs-64bit
-          path: |
-            santrope-core-client/libs/arm64-v8a/
-            libs/arm64-v8a/
-            
+          path: libs/arm64-v8a/
+          

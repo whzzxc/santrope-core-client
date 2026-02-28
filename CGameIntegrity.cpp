@@ -115,7 +115,7 @@ void CGameIntegrity::ProcUniqueLibrary(void*)
 
 void CGameIntegrity::ProcConvertBufferToObject(void*)
 {
-	PROTECT_CODE_GAME_INTEGRITY2;
+	//PROTECT_CODE_GAME_INTEGRITY2;
 
 	while (m_bWorking)
 	{
@@ -153,7 +153,7 @@ bool IsPMHere();
 bool DumpLibraries(std::vector<std::string>& buff);
 void CGameIntegrity::ProcCheckLibraries(void*)
 {
-	PROTECT_CODE_GAME_INTEGRITY1;
+	//PROTECT_CODE_GAME_INTEGRITY1;
 
 	while (m_bWorking)
 	{

@@ -8,7 +8,7 @@ struct GAME_SCRIPT_THREAD
 	uint8_t Pad1[20];			// +00
 	uintptr_t dwScriptIP;		// +20
 	uint8_t Pad2[36];			// +24
-	uint32_t dwLocalVar[32];	// +60
+	uintptr_t dwLocalVar[32];	// +60
 	uint32_t dwTimers[2];		// +188
 	uint8_t Pad3[33];			// +196
 	uint8_t condResult;			// +229

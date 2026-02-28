@@ -52,7 +52,7 @@ int ScriptCommand(const SCRIPT_COMMAND *pScriptCommand, ...)
 				uint32_t *v = va_arg(ap, uint32_t*);
 				ScriptBuf[buf_pos] = 0x03;
 				buf_pos++;
-				pdwParamVars[var_pos] = (uintptr_t)(void*)(uintptr_t)v;
+				*(uintptr_t*)&pdwParamVars[var_pos] = (uintptr_t)v;
 				gst->dwLocalVar[var_pos] = *v;
 				memcpy(&ScriptBuf[buf_pos], &var_pos, 2);
 				buf_pos += 2;
@@ -90,7 +90,7 @@ int ScriptCommand(const SCRIPT_COMMAND *pScriptCommand, ...)
 	if (var_pos)
 	{
 		for (int i=0; i < var_pos; i++)
-			*pdwParamVars[i] = (uintptr_t)(void*)(uintptr_t)gst->dwLocalVar[i];
+			*(uintptr_t*)&pdwParamVars[i] = (uintptr_t)gst->dwLocalVar[i];
 	}
 
 	return result;

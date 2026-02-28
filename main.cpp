@@ -113,7 +113,7 @@ extern "C"
 void InitBASSFuncs();
 void InitSAMP(JNIEnv* pEnv, jobject thiz)
 {
-	PROTECT_CODE_INITSAMP;
+	//PROTECT_CODE_INITSAMP;
 
 	InitBASSFuncs();
 	BASS_Init(-1, 44100, BASS_DEVICE_3D, 0, NULL); //������������� ��������� ������

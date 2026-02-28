@@ -286,7 +286,7 @@ void CObfuscatedHook::WriteMemory(uintptr_t dest, uintptr_t src, size_t size)
 {
 	g_sGameIntegrityCalls->UnFuck(dest);
 	memcpy((void*)dest, (void*)src, size);
-	cacheflush(dest, dest + size, 0);
+	//cacheflush(dest, dest + size, 0);
 }
 
 void CObfuscatedHook::ReadMemory(uintptr_t dest, uintptr_t src, size_t size)

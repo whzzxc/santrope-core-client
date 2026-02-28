@@ -401,7 +401,7 @@ void handler3(int signum, siginfo_t* info, void* contextPtr)
 		CrashLog("2: libc.so + 0x%X", context->uc_mcontext.arm_lr - FindLibrary("libc.so"));
 		*/
 
-		PrintSymbols((void*)(context->uc_mcontext.arm_pc), (void*)(context->uc_mcontext.arm_lr));
+		//PrintSymbols((void*)(context->uc_mcontext.arm_pc), (void*)(context->uc_mcontext.arm_lr));
 
 		//DumpLibraries();
 
@@ -438,6 +438,7 @@ void handler(int signum, siginfo_t *info, void* contextPtr)
 		CrashLog("libsamp base address: 0x%X", FindLibrary("libsamp.so"));
 		CrashLog("libc base address: 0x%X", FindLibrary("libc.so"));
 		CrashLog("register states:");
+		/*
 		CrashLog("r0: 0x%X, r1: 0x%X, r2: 0x%X, r3: 0x%X",
 			context->uc_mcontext.arm_r0, 
 			context->uc_mcontext.arm_r1, 
@@ -470,6 +471,7 @@ void handler(int signum, siginfo_t *info, void* contextPtr)
 		CrashLog("2: libc.so + 0x%X", context->uc_mcontext.arm_lr - FindLibrary("libc.so"));
 
 		PrintSymbols((void*)(context->uc_mcontext.arm_pc), (void*)(context->uc_mcontext.arm_lr));
+		*/
 
 		//DumpLibraries();
 
@@ -506,6 +508,7 @@ void handler2(int signum, siginfo_t* info, void* contextPtr)
 		CrashLog("libsamp base address: 0x%X", FindLibrary("libsamp.so"));
 		CrashLog("libc base address: 0x%X", FindLibrary("libc.so"));
 		CrashLog("register states:");
+		/*
 		CrashLog("r0: 0x%X, r1: 0x%X, r2: 0x%X, r3: 0x%X",
 			context->uc_mcontext.arm_r0,
 			context->uc_mcontext.arm_r1,
@@ -539,6 +542,7 @@ void handler2(int signum, siginfo_t* info, void* contextPtr)
 		CrashLog("2: libc.so + 0x%X", context->uc_mcontext.arm_lr - FindLibrary("libc.so"));
 
 		PrintSymbols((void*)(context->uc_mcontext.arm_pc), (void*)(context->uc_mcontext.arm_lr));
+		*/
 
 		//DumpLibraries();
 
@@ -577,6 +581,7 @@ void handler1(int signum, siginfo_t* info, void* contextPtr)
 		CrashLog("libsamp base address: 0x%X", FindLibrary("libsamp.so"));
 		CrashLog("libc base address: 0x%X", FindLibrary("libc.so"));
 		CrashLog("register states:");
+		/*
 		CrashLog("r0: 0x%X, r1: 0x%X, r2: 0x%X, r3: 0x%X",
 			context->uc_mcontext.arm_r0,
 			context->uc_mcontext.arm_r1,
@@ -603,6 +608,7 @@ void handler1(int signum, siginfo_t* info, void* contextPtr)
 		CrashLog("2: libGTASA.so + 0x%X", context->uc_mcontext.arm_lr - g_libGTASA);
 
 		PrintSymbols((void*)(context->uc_mcontext.arm_pc), (void*)(context->uc_mcontext.arm_lr));
+		*/
 
 		CrashLog("1: libsamp.so + 0x%X", context->uc_mcontext.arm_pc - FindLibrary("libsamp.so"));
 		CrashLog("2: libsamp.so + 0x%X", context->uc_mcontext.arm_lr - FindLibrary("libsamp.so"));

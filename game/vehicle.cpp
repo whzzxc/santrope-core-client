@@ -37,7 +37,7 @@ CVehicle::CVehicle(int iType, float fPosX, float fPosY, float fPosZ, float fRota
 		}
 		if (bSiren)
 		{
-			// допилить
+			// Г¤Г®ГЇГЁГ«ГЁГІГј
 		}
 		else
 		{
@@ -207,10 +207,10 @@ CVehicle::~CVehicle()
 
 		if (m_pTrailer)
 		{
-			// detach trailer (допилить)
+			// detach trailer (Г¤Г®ГЇГЁГ«ГЁГІГј)
 		}
 
-		// тут еще какая-то интересная шняга
+		// ГІГіГІ ГҐГ№ГҐ ГЄГ ГЄГ Гї-ГІГ® ГЁГ­ГІГҐГ°ГҐГ±Г­Г Гї ГёГ­ГїГЈГ 
 
 		if (m_pCustomHandling)
 		{
@@ -1320,7 +1320,7 @@ void CVehicle::SetComponentAngle(bool bUnk, int iID, float angle)
 void CVehicle::SetComponentVisibleInternal(const char* szComponent, bool bVisible)
 {
 	
-	PROTECT_CODE_COMPONENT_VISIBLE_INTERNAL;
+	//PROTECT_CODE_COMPONENT_VISIBLE_INTERNAL;
 	if (!m_pVehicle || !m_dwGTAId)
 	{
 		return;

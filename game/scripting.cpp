@@ -90,7 +90,7 @@ int ScriptCommand(const SCRIPT_COMMAND *pScriptCommand, ...)
 	if (var_pos)
 	{
 		for (int i=0; i < var_pos; i++)
-			*pdwParamVars[i] = (uintptr_t)(void*)(uintptr_t)gst->dwLocalVar(i);
+			*pdwParamVars[i] = (uintptr_t)(void*)(uintptr_t)gst->dwLocalVar[i];
 	}
 
 	return result;

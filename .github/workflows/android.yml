@@ -11,7 +11,7 @@ jobs:
       - name: Set up NDK
         uses: nwidger/setup-ndk@v1
         with:
-          ndk-version: r25b # Стандарт для SAMP Mobile
+          ndk-version: r21e # Стандарт для SAMP Mobile
 
       - name: Build with ndk-build
         run: |

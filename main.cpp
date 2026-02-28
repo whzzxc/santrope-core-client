@@ -367,6 +367,7 @@ void handler3(int signum, siginfo_t* info, void* contextPtr)
 		CrashLog("libsamp base address: 0x%X", FindLibrary("libsamp.so"));
 		CrashLog("libc base address: 0x%X", FindLibrary("libc.so"));
 		CrashLog("register states:");
+		/*
 		CrashLog("r0: 0x%X, r1: 0x%X, r2: 0x%X, r3: 0x%X",
 			context->uc_mcontext.arm_r0,
 			context->uc_mcontext.arm_r1,
@@ -398,6 +399,7 @@ void handler3(int signum, siginfo_t* info, void* contextPtr)
 
 		CrashLog("1: libc.so + 0x%X", context->uc_mcontext.arm_pc - FindLibrary("libc.so"));
 		CrashLog("2: libc.so + 0x%X", context->uc_mcontext.arm_lr - FindLibrary("libc.so"));
+		*/
 
 		PrintSymbols((void*)(context->uc_mcontext.arm_pc), (void*)(context->uc_mcontext.arm_lr));
 

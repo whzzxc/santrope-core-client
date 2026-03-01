@@ -59,14 +59,14 @@ void NOP(uintptr_t addr, unsigned int count)
         *(char*)(ptr+1) = 0x46;
     }
 
-    cacheflush(addr, (uintptr_t)(addr + count*2), 0);
+    //cacheflush(addr, (uintptr_t)(addr + count*2), 0);
 }
 
 void WriteMemory(uintptr_t dest, uintptr_t src, size_t size)
 {
 	UnFuck(dest);
 	memcpy((void*)dest, (void*)src, size);
-	cacheflush(dest, dest+size, 0);
+	//cacheflush(dest, dest+size, 0);
 }
 
 void WriteMemory1(uintptr_t dest, uintptr_t src, size_t size)

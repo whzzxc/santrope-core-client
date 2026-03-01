@@ -1553,7 +1553,7 @@ typedef uintptr_t RpClump;
 void(*CVehicleModelInfo__SetEditableMaterials)(uintptr_t);
 void CVehicleModelInfo__SetEditableMaterials_hook(uintptr_t clump)
 {
-	PROTECT_CODE_MODELINFO_EDITABLE;
+	//PROTECT_CODE_MODELINFO_EDITABLE;
 	RpClump* pClump = (RpClump*)clump;
 
 	
@@ -1583,7 +1583,7 @@ void CVehicleModelInfo__SetEditableMaterials_hook(uintptr_t clump)
 void (*CVehicle__ResetAfterRender)(uintptr_t);
 void CVehicle__ResetAfterRender_hook(uintptr_t thiz)
 {
-	PROTECT_CODE_RESET_AFTER_RENDER;
+	//PROTECT_CODE_RESET_AFTER_RENDER;
 
 	for (auto& p : resetEntriesVehicle)
 	{

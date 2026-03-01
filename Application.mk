@@ -3,3 +3,4 @@ APP_PLATFORM := android-21
 APP_MODULES := samp
 APP_STL := c++_static
 APP_CPPFLAGS += -std=c++17
+APP_LDFLAGS += -latomic

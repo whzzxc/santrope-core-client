@@ -1,4 +1,5 @@
 name: Android Build 64-bit
+on: [push, workflow_dispatch]
 
 jobs:
   build:

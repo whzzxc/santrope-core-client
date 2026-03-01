@@ -7,6 +7,11 @@
 #include <assert.h>
 #include <dlfcn.h>
 #include <dirent.h>
+#if defined(__arm64__) || defined(__aarch64__)
+#include <asm/unistd.h>
+#include <unistd.h>
+#define cacheflush(a, b, c) syscall(__NR_cacheflush, a, b, c)
+#endif
 
 #define HOOK_PROC "\x01\xB4\x01\xB4\x01\x48\x01\x90\x01\xBD\x00\xBF\x00\x00\x00\x00"
 const uint8_t g_szTrueBytes[5] = "\x09\x68\x49\x6C";
@@ -17,7 +22,7 @@ const cryptor::string_encryptor allowedLibs[] = {
 cryptor::create("libsamp.so", 11),
 cryptor::create("libGTASA.so", 23),
 cryptor::create("libImmEmulatorJ.so", 23),
-cryptor::create("libSCAnd.so", 23),
+//cryptor::create("libSCAnd.so", 23),
 cryptor::create("libcrashlytics.so", 23),
 cryptor::create("libbass.so", 23)
 };

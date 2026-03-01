@@ -432,7 +432,7 @@ __attribute__((naked)) void PickupPickUp_hook()
 	//LOGI("PickupPickUp_hook");
 
 	// calculate and save ret address
-	__asm__ volatile("push {lr}\n\t"
+	/*__asm__ volatile("push {lr}\n\t"
 					"push {r0}\n\t"
 					"blx get_lib\n\t"
 					"add r0, #0x2D0000\n\t"
@@ -458,6 +458,7 @@ __attribute__((naked)) void PickupPickUp_hook()
 					"sub.w r2, r1, #8\n\t"
 					"cmp r1, #6\n\t"
 					"pop {pc}\n\t");
+	*/
 }
 
 extern "C" bool NotifyEnterVehicle(VEHICLE_TYPE *_pVehicle)
@@ -497,7 +498,7 @@ extern "C" void call_taskEnterCarAsDriver(uintptr_t a, uint32_t b)
 }
 void __attribute__((naked)) CTaskComplexEnterCarAsDriver_hook(uint32_t thiz, uint32_t pVehicle)
 {
-    __asm__ volatile("push {r0-r11, lr}\n\t"
+   /* __asm__ volatile("push {r0-r11, lr}\n\t"
                     "mov r2, lr\n\t"
                     "blx get_lib\n\t"
                     "add r0, #0x3A0000\n\t"
@@ -512,6 +513,7 @@ void __attribute__((naked)) CTaskComplexEnterCarAsDriver_hook(uint32_t thiz, uin
     				"push {r0-r11, lr}\n\t"
     				"blx call_taskEnterCarAsDriver\n\t"
     				"pop {r0-r11, pc}");
+					*/
 }
 
 void ProcessPedDamage(PED_TYPE* pIssuer, PED_TYPE* pDamaged)

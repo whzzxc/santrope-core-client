@@ -16,20 +16,18 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    := libenet 
 LOCAL_SRC_FILES := vendor/enet/libenet.a
 
- LOCAL_C_INCLUDES := $(LOCAL_PATH) \
-                    $(LOCAL_PATH)/game \
-                    $(LOCAL_PATH)/net \
-                    $(LOCAL_PATH)/util \
-                    $(LOCAL_PATH)/gui \
-                    $(LOCAL_PATH)/vendor
+include $(PREBUILT_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := samp
 LOCAL_LDLIBS := -llog -lOpenSLES
 
+LOCAL_C_INCLUDES += $(wildcard $(LOCAL_PATH)/vendor/)
+
 # samp
 FILE_LIST := $(wildcard $(LOCAL_PATH)/*.cpp)
+FILE_LIST := $(wildcard $(LOCAL_PATH)/*.h)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/game/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/net/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/util/*.cpp)

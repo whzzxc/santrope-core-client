@@ -96,7 +96,7 @@ void CPlayerPed::Destroy()
 	}
 
 	/*
-		if(m_dwParachute) ... (допилить)
+		if(m_dwParachute) ... (Г¤Г®ГЇГЁГ«ГЁГІГј)
 	*/
 
 	Log("Removing from vehicle..");
@@ -435,7 +435,7 @@ void CPlayerPed::SetPlayerAimState()
 
 void CPlayerPed::ApplyCommandTask(char* a2, int a4, int a5, int a6, VECTOR* a7, char a8, float a9, int a10, int a11, char a12)
 {
-	uint32_t dwPed = (uint32_t)m_pPed;
+	uintptr_t dwPed = (uintptr_t)m_pPed;
 	if (!dwPed) return;
 	// 00958484 - g_ikChainManager
 	// 00463188 addr
@@ -566,7 +566,7 @@ void CPlayerPed::PutDirectlyInVehicle(int iVehicleID, int iSeat)
 	if(!GamePool_Vehicle_GetAt(iVehicleID)) return;
 	if(!GamePool_Ped_GetAt(m_dwGTAId)) return;
 
-	/* допилить
+	/* Г¤Г®ГЇГЁГ«ГЁГІГј
 	if(GetCurrentWeapon() == WEAPON_PARACHUTE) {
 		SetArmedWeapon(0);
 	}*/
@@ -576,7 +576,7 @@ void CPlayerPed::PutDirectlyInVehicle(int iVehicleID, int iSeat)
 	if(pVehicle->fHealth == 0.0f) return;
 	// check is cplaceable
 	if (pVehicle->entity.vtable == g_libGTASA+0x5C7358) return;
-	// check seatid (допилить)
+	// check seatid (Г¤Г®ГЇГЁГ«ГЁГІГј)
 
 	if(iSeat == 0)
 	{
@@ -594,7 +594,7 @@ void CPlayerPed::PutDirectlyInVehicle(int iVehicleID, int iSeat)
 
 	if(pNetGame)
 	{
-		// допилить (трейлеры)
+		// Г¤Г®ГЇГЁГ«ГЁГІГј (ГІГ°ГҐГ©Г«ГҐГ°Г»)
 	}
 }
 
@@ -718,25 +718,25 @@ void CPlayerPed::SetModelIndex(unsigned int uiModel)
 	}
 }
 
-// допилить
+// Г¤Г®ГЇГЁГ«ГЁГІГј
 void CPlayerPed::DestroyFollowPedTask()
 {
 
 }
 
-// допилить
+// Г¤Г®ГЇГЁГ«ГЁГІГј
 void CPlayerPed::ClearAllWeapons()
 {
 	uintptr_t dwPedPtr = (uintptr_t)m_pPed;
 	uint8_t old = *(uint8_t*)(g_libGTASA + 0x008E864C);	// CWorld::PlayerInFocus - 0x008E864C
 	*(uint8_t*)(g_libGTASA + 0x008E864C) = m_bytePlayerNumber;
 
-	((uint32_t(*)(uintptr_t, int, int, int))(g_libGTASA + 0x004345AC + 1))(dwPedPtr, 1, 1, 1); // CPed::ClearWeapons(void)
+	((uintptr_t(*)(uintptr_t, int, int, int))(g_libGTASA + 0x004345AC + 1))(dwPedPtr, 1, 1, 1); // CPed::ClearWeapons(void)
 
 	*(uint8_t*)(g_libGTASA + 0x008E864C) = old;
 }
 
-// допилить
+// Г¤Г®ГЇГЁГ«ГЁГІГј
 void CPlayerPed::ResetDamageEntity()
 {
 
@@ -777,7 +777,7 @@ uint8_t CPlayerPed::GetActionTrigger()
 
 void CPlayerPed::SetActionTrigger(uint8_t action)
 {
-	m_pPed->dwAction = (uint32_t)action;
+	m_pPed->dwAction = (uintptr_t)action;
 }
 
 void CPlayerPed::AttachObject(ATTACHED_OBJECT_INFO* pInfo, int iSlot)
@@ -791,7 +791,7 @@ void CPlayerPed::AttachObject(ATTACHED_OBJECT_INFO* pInfo, int iSlot)
 	GetMatrix(&matPos);
 	VECTOR vecRot{ 0.0f, 0.0f, 0.0f };
 	m_aAttachedObjects[iSlot].pObject = new CObject(pInfo->dwModelId, matPos.pos.X, matPos.pos.Y, matPos.pos.Z, vecRot, 200.0f);
-	*(uint32_t*)((uintptr_t)m_aAttachedObjects[iSlot].pObject->m_pEntity + 28) &= 0xFFFFFFFE; // disable collision
+	*(uintptr_t*)((uintptr_t)m_aAttachedObjects[iSlot].pObject->m_pEntity + 28) &= 0xFFFFFFFE; // disable collision
 	m_aAttachedObjects[iSlot].bState = true;
 }
 
@@ -883,7 +883,7 @@ void CPlayerPed::ProcessAttach()
 		{
 			RpHAnimHierarchy* hierarchy = ((RpHAnimHierarchy * (*)(uintptr_t*))(g_libGTASA + 0x00559338 + 1))((uintptr_t*)m_pPed->entity.m_RwObject); // GetAnimHierarchyFromSkinClump
 			int iID;
-			uint32_t bone = m_aAttachedObjects[i].dwBone;
+			uintptr_t bone = m_aAttachedObjects[i].dwBone;
 			if (hierarchy)
 			{
 				iID = ((int(*)(RpHAnimHierarchy*, int))(g_libGTASA + 0x0019A448 + 1))(hierarchy, bone); // RpHAnimIDGetIndex
@@ -1398,7 +1398,7 @@ ENTITY_TYPE* CPlayerPed::GetEntityUnderPlayer()
 	return (ENTITY_TYPE*)entity;
 }
 
-// допилить
+// Г¤Г®ГЇГЁГ«ГЁГІГј
 uint16_t CPlayerPed::GetKeys(uint16_t *lrAnalog, uint16_t *udAnalog)
 {
 	*lrAnalog = LocalPlayerKeys.wKeyLR;

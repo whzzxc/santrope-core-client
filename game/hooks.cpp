@@ -547,7 +547,7 @@ void CTaskComplexLeaveCar_hook(uintptr_t** thiz, VEHICLE_TYPE *pVehicle, int iTa
  	{
  		if (pNetGame) 
  		{
- 			if (GamePool_FindPlayerPed()->pVehicle == (uint32_t)pVehicle) 
+ 			if (GamePool_FindPlayerPed()->pVehicle == (uintptr_t)pVehicle) 
  			{
  				CVehiclePool *pVehiclePool=pNetGame->GetVehiclePool();
  				VEHICLEID VehicleID=pVehiclePool->FindIDFromGtaPtr((VEHICLE_TYPE *)GamePool_FindPlayerPed()->pVehicle);

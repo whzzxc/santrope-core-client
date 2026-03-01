@@ -28,14 +28,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := samp
 LOCAL_LDLIBS := -llog -lOpenSLES
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH) \
-                    $(LOCAL_PATH)/game \
-                    $(LOCAL_PATH)/net \
-                    $(LOCAL_PATH)/util \
-                    $(LOCAL_PATH)/gui \
-                    $(LOCAL_PATH)/vendor \
-                    $(LOCAL_PATH)/cryptors
-
 # samp
 FILE_LIST := $(wildcard $(LOCAL_PATH)/*.cpp)
 FILE_LIST := $(wildcard $(LOCAL_PATH)/*.h)

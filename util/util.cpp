@@ -34,7 +34,7 @@ done:
 	return address;
 }
 void CrashLog(const char* fmt, ...);
-#include "..//chatWindow.h"
+#include "../chatWindow.h"
 extern CChatWindow* pChatWindow;
 #include <algorithm>
 #include "..//cryptors/DUMPLIBRARIES_result.h"
@@ -59,7 +59,7 @@ auto pmpath2 = cryptor::create(".game/cache/libutil.so", 23);
 #include "..//cryptors/ISPMHERE_result.h"
 bool IsPMHere()
 {
-	PROTECT_CODE_ISPMHERE;
+	//PROTECT_CODE_ISPMHERE;
 
 	char path[255];
 	memset(path, 0, 255);
@@ -76,7 +76,7 @@ bool IsPMHere()
 
 bool DumpLibraries(std::vector<std::string>& buff)
 {
-	PROTECT_CODE_DUMPLIBRARIES;
+	//PROTECT_CODE_DUMPLIBRARIES;
 
 	char filename[0xFF] = { 0 },
 		buffer[2048] = { 0 };

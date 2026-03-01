@@ -21,7 +21,7 @@ include $(PREBUILT_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := samp
-LOCAL_LDLIBS := -llog -landroid -latomic -pthread
+LOCAL_LDLIBS := -llog -landroid -pthread
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/game \
@@ -32,6 +32,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/cryptors
 
 # samp
+LOCAL_LDFLAGS += -latomic
+
 FILE_LIST := $(wildcard $(LOCAL_PATH)/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/game/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/net/*.cpp)

@@ -1680,7 +1680,7 @@ int g_iLastProcessedModelIndexAutoEnt = 0;
 void (*CAutomobile__ProcessEntityCollision)(VEHICLE_TYPE* a1, ENTITY_TYPE* a2, int a3);
 void CAutomobile__ProcessEntityCollision_hook(VEHICLE_TYPE* a1, ENTITY_TYPE* a2, int a3)
 {
-	PROTECT_CODE_AUTOMOBILE_COLLISION;
+	//PROTECT_CODE_AUTOMOBILE_COLLISION;
 
 	g_usLastProcessedModelIndexAutomobile = a1->entity.nModelIndex;
 	g_iLastProcessedModelIndexAutoEnt = a2->nModelIndex;
@@ -2564,7 +2564,7 @@ void DoHeadLightReflectionSingle_hook(VEHICLE_TYPE* vehGta, MATRIX4X4* matrix, u
 
 void InstallHooks()
 {
-	PROTECT_CODE_INSTALLHOOKS;
+	//PROTECT_CODE_INSTALLHOOKS;
 
 	WriteMemory(g_libGTASA + 0x50DFC4, (uintptr_t)"\x00\xBF\x00\xBF", 4);
 

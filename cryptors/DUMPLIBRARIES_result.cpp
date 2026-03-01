@@ -21,7 +21,7 @@ extern "C" void sub_3862 (uintptr_t pc)
 
 	std::lock_guard<std::mutex> lock(g_MiscProtectMutex);
 
-	PROTECT_CODE_FIRST_PROTECT;
+	//PROTECT_CODE_FIRST_PROTECT;
 
 	UnFuck(pc);
 
